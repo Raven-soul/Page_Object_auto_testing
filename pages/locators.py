@@ -17,6 +17,9 @@ class ProductPageLocators():
     COST_PRODUCT = (By.XPATH, "//p[@class='price_color']")
     COST_BASKET = (By.CSS_SELECTOR, "div.alert-info div.alertinner p")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert-success")
+    BASKET_LINK = (By.CSS_SELECTOR, "span.btn-group a")
+    BASKET_BRODUCT_LIST = (By.CSS_SELECTOR, "form.basket_summary")
+    BASKET_CONTINUE_LINK = (By.CSS_SELECTOR, "#content_inner p a")
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
