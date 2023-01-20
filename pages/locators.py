@@ -7,9 +7,10 @@ class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    EMAIL_INPUT = (By.NAME, "id_registration-email")#registration-email
+    EMAIL_INPUT = (By.CSS_SELECTOR, "#id_registration-email")
     PASS1_INPUT = (By.NAME, "registration-password1")
     PASS2_INPUT = (By.NAME, "registration-password2")
+    REGISTR_BUTTON = (By.NAME, "registration_submit")
     
 class ProductPageLocators():
     AD_BUTTON = (By.CLASS_NAME, "btn-add-to-basket")

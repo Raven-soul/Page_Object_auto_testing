@@ -2,12 +2,6 @@ from .base_page import BasePage
 from .locators import LoginPageLocators
 import time
 
-def email_stroke():
-    return str(time.time()) + "@fakemail.org"
-
-def pass_stroke():
-    return str(time.time())
-
 class LoginPage(BasePage):
     def should_be_login_page(self):
         self.should_be_login_url()
@@ -27,10 +21,12 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
 
     def register_new_user(self, email, password):
-        registerButton = self.browser.find_element(*LoginPageLocators.LOGIN_LINK)
-        registerButton.click()
         emailLine = self.browser.find_element(*LoginPageLocators.EMAIL_INPUT)
         pass1Line = self.browser.find_element(*LoginPageLocators.PASS1_INPUT)
         pass2Line = self.browser.find_element(*LoginPageLocators.PASS2_INPUT)
 
-        emailLine.set
+        emailLine.send_keys(email)
+        pass1Line.send_keys(password)
+        pass2Line.send_keys(password)
+
+        self.browser.find_element(*LoginPageLocators.REGISTR_BUTTON).click()
